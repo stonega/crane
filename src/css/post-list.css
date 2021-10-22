@@ -102,11 +102,9 @@
 }
 
 .all-posts-link {
-  margin-top: 4rem;
+  margin-top: 2rem;
   width: fit-content;
   display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
   font-size: var(--text-lg);
   text-decoration: underline;
   color: currentColor;

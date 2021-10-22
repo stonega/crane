@@ -9,9 +9,8 @@
 .footer__content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: left;
+  margin-left: 4rem;
   max-width: 48.75rem;
   width: 100%;
   font-size: var(--text-base);

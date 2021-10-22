@@ -7,9 +7,9 @@
 
     {% bundledcss %}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet">
     <title>
       {{  title  | escape }}
       {% if title %}
@@ -50,8 +50,10 @@
     {% endif %}
 
     {# Add mermaid -- start #}
-      <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-      <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({startOnLoad: true});
+    </script>
     {# Add mermaid -- end #}
   </head>
   <body>
@@ -99,43 +101,11 @@
       <footer class="footer">
         <div class="footer__content">
 
-          <ul class="hero__social-links">
-            {% if site.socialLinks %}
-              {% for item in site.socialLinks %}
-                {% set externalAttribute = '' %}
-
-                {% if item.external %}
-                  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
-                {% endif %}
-
-                <li>
-                  <a href="{{ item.url | url }}" {{ externalAttribute | safe }} >{{ item.text }}</a>
-                </li>
-              {% endfor %}
-            {% endif %}
-
-            {% if site.footerLinks %}
-
-              {% for item in site.footerLinks %}
-                {% set externalAttribute = '' %}
-
-                {% if item.external %}
-                  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
-                {% endif %}
-
-                <li>
-                  <a href="{{ item.url | url }}" {{ externalAttribute | safe }} >{{ item.text }}</a>
-                </li>
-              {% endfor %}
-            {% endif %}
-          </ul>
-
           {% if site.showFooterAttribution %}
             <p class="footer__attribution">
           Created by
       <a href="https://twitter.com/yinkakun" target="_blank" rel="noopener">Yinka,</a>
        Powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">11ty,</a>
-        Checkout <a href="https://github.com/yinkakun/eleventy-duo" target="_blank" rel="noopener noreferrer">project's github repo </a>
             </p>
           {% endif %}
 

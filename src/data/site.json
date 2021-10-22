@@ -1,11 +1,11 @@
 {
-  "name": "Eleventy Duo",
-  "description": "Eleventy Duo is a minimal and beautiful Eleventy theme for personal blogs.",
-  "url": "https://eleventyduo.netlify.app",
+  "name": "Crane",
+  "description": "I am a UI developer.",
+  "url": "https://blog.stonegate.me",
   "author": {
-    "name": "Author Name",
-    "email": "author@site.com",
-    "twitterHandle": "author_handle"
+    "name": "Stone",
+    "email": "xijieyin@gmail.com",
+    "twitterHandle": "shimenmen"
   },
   "defaultSocialImage": "/images/default-social-image.png",
   "headerLinks": [
@@ -22,18 +22,13 @@
   ],
   "socialLinks": [
     {
-      "text": "Instagram",
-      "url": "https://instagram.com/",
-      "external": true
-    },
-    {
       "text": "GitHub",
-      "url": "https://github.com/yinkakun/eleventy-duo",
+      "url": "https://github.com/stonega/",
       "external": true
     },
     {
       "text": "Twitter",
-      "url": "https://twitter.com/",
+      "url": "https://twitter.com/shimenmen",
       "external": true
     }
   ],
