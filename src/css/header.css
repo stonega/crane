@@ -25,12 +25,12 @@
 }
 
 .site-title a {
-  color: rgb(6 6 6);
+  color: var(--accent);
   text-decoration: none;
 }
 
 .site-title a:hover {
-  color: rgb(41, 41, 41);
+ filter: brightness(85%);
 }
 
 .nav__list {
