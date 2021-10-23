@@ -73,7 +73,7 @@ Now that you’ve identified the components in the mockup, arrange them into a h
 
 你可以自上而下构建组件，从组件架构里较高层级的组件（比如 FilterableProductTable ）开始，也可以自下而上构建组件，从组件架构里较底层的组件（比如 ProductionRow ）开始。对于简单的应用，一般采用自上而下的方式，对于大型的项目，采用自下而上的方式更为容易。
 
-```javascript
+```
 function ProductCategoryRow({ category }) {
   return (
     <tr>
@@ -239,7 +239,7 @@ After identifying your app’s minimal state data, you need to identify which co
 
 使用 [useState(hook)](https://beta.reactjs.org/reference/usestate) 来管理组件状态。钩子可以帮助你在组件的渲染过程中。在 FilterableProductTable 最上层添加两个状态变量并赋予初始值。
 
-```javascript
+```
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
@@ -259,7 +259,7 @@ function FilterableProductTable({ products }) {
 你可以看到应用如何执行。通过修改 useState('') 为 useState('fruit') 修改 filerText 初始值。你可以看到搜索值和表格更新。
 
 在上面的 sandbox 里， ProductTable 和 SearchBar 读取 filerText 和 inStockOnly props 来渲染表格，输入框和选择框。例如，这里是 SearchBar 设置初始值。
-```javascript
+```
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
@@ -280,7 +280,7 @@ React 保证数据流动是精确的，但是它需要更多的代码来实现�
 
 你想要根据用户修改输入值跟新状态。状态值属于 FilterableProductTable ,因此只有它可以使用 setFilterText 和 setInStockOnly 。为了让 SearchBar 更新 FilterableProductTable 的状态值，你需要传递这些函数到 SearchBar 。
 
-```javascript
+```
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
@@ -297,7 +297,7 @@ function FilterableProductTable({ products }) {
 Inside the SearchBar, you will add the onChange event handlers and set the parent state from them:
 
 在 SearchBar 中，你可以添加 onChange 事件处理和设置父级组件。
-```javascript
+```
 <input 
   type="text" 
   value={filterText} 
