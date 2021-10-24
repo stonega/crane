@@ -1,5 +1,5 @@
 ---
-title: Think in React
+title: Thinking in React
 date: '2021-10-22'
 tags: [react, translate]
 description: Think in react.
@@ -8,11 +8,11 @@ permalink: posts/{{ title | slug }}/index.html
 
 > 本文翻译自 https://beta.reactjs.org/learn/thinking-in-react
 
-React 可以改变你看待设计以及开发应用的想法。在使用 React 之前，你看到的可能是茫茫一片树林，之后你会看清楚每一棵树。React 让设计系统和 UI 状态管理变得简单。在这个教程中，我们降帮助你使用 React 完成建造一个可搜索数据表格的产品。
+React 可以改变你看待设计以及开发应用的想法。在使用 React 之前，你看到的可能是茫茫一片树林，之后你会看清楚树林中的每一棵树。React 让设计系统和 UI 状态管理变得简单。在这个教程中，我们将帮助你使用 React 完成一个支持搜索的产品表格的应用。
 
 ## 从设计图纸开始
 
-想象你拥有一个 JSON API 接口，以及设计师的设计图纸。
+假设你拥有一个 JSON API 接口，以及设计师的设计图。
 
 JSON API 返回的数据如下：
 
@@ -25,14 +25,14 @@ JSON API 返回的数据如下：
   { category: "Vegetables", price: "$1", stocked: true, name: "Peas" }
 ]</pre>
 
-设计图纸如下：
+设计图如下：
 ![Design Image](https://beta.reactjs.org/images/docs/s_thinking-in-react_ui.png)
 
 你将通过以下五个步骤来完成这个 UI 设计。
 
 ### 步骤一 将 UI 划分成组件
 
-首先你需要在设计图中划出组件及子组件并命名。如果你和设计师一起工作，可能设计师已经在设计工具里对这些组件进行了命名，你可以惊醒查看。
+首先你需要在设计图中划出组件及子组件并命名。如果你和设计师一起工作，可能设计师已经在设计工具里对这些组件进行了命名，你可以查看。
 
 根据你的背景不同，将设计图纸划分为组件一般有以下几种方式：
 
@@ -172,7 +172,7 @@ export default function App() {
 
 ### 步骤三 找到最小化但完整的应用状态
 
-想要 UI 用互动性，你需要运行用户改变数据模型。你需要太多状态管理来实现。
+想要 UI 用互动性，你需要运行用户改变数据模型。你需要通过状态管理来实现。
 
 状态其实是你的应用需要记住的实时变化的数据的最小集合。构建状态最重要的原则就是不要重复 [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)。找出你的应用所需要状态的最小代表，剩余的则通过计算实现。例如，如果你在构建一个购物清单，你可以将商品存储在一个数组里。如果你想展示商品的数量，不要存储数据在另一个状态值里，而是使用数组的长度。
 
@@ -199,16 +199,16 @@ export default function App() {
 
 可见，只有搜索值和选择框的值属于状态值。
 
+<pre>
 #### 深入
 在 React 中有两种数据 Props 和 State,这两者有很大不同。
 * Props 像你在函数中的传入变量。它帮助父组件将数据传值给子组件，修改子组件的样式。比如， Form 可以传递颜色值给 Button 。
 * State 像组件的记忆。它帮助组件追踪一些信息并根据信息改变自己的状态。比如，Button 需要追踪 isHovered 状态值。
 
 Props 和 State 是不同的，但是它们一起工作，父组件经常保持一些信息在状态值里，通过 Prop 将数据传递给子组件。第一次阅读时感到疑惑是正常的，这需要通过联系慢慢熟悉。
+</pre>
 
 ### 步骤四 判断状态所处位置
-
-After identifying your app’s minimal state data, you need to identify which component is responsible for changing this state, or owns the state. Remember: React uses one-way data flow, passing data down the component hierarchy from parent to child component. It may not be immediately clear which component should own what state. This can be challenging if you’re new to this concept, but you can figure it out by following these steps!
 
 在确定应用的状态值后，你需要判断哪一个组件用来负责状态修改，或者拥有状态值。记住： React 使用单向数据流，从父级组件传递数据到字组件。哪个组件应该拥有状态值可能不是立刻清晰。当你的第一次接触时会很有挑战，你可以通过以下步骤来完成。
 
@@ -221,6 +221,7 @@ After identifying your app’s minimal state data, you need to identify which co
     1. 通常，你可以将状态值放在共同父组件里。
     2. 你可以将状态值放在共同父组件更上层的组件中。
     3. 如果你找不到一个组件可以放置状态，你可以单独创建一个新的组件，并把他添加为共同父组件的上层组件。
+
 在前面的步骤中，你发现了应用中需要两个状态值：搜索框输入值和选择框输入值。在这个例子中，它们总是共同出现，因此可以认为它们是同一个状态。
 
 现在我们来整理这些状态值：
@@ -235,13 +236,15 @@ After identifying your app’s minimal state data, you need to identify which co
 
 使用 [useState(hook)](https://beta.reactjs.org/reference/usestate) 来管理组件状态。钩子可以帮助你在组件的渲染过程中。在 FilterableProductTable 最上层添加两个状态变量并赋予初始值。
 
-```
+```js
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
 ```
+
 然后， 将 filterText 和 isStockOnly 传递到 ProductTable 和 SearchBar 。
-```javascript
+
+```js
 <div>
   <SearchBar 
     filterText={filterText} 
@@ -266,7 +269,7 @@ function SearchBar({ filterText, inStockOnly }) {
 ```
 Refer to the Managing State to dive deeper into how React uses state and how you can organize your app with it.
 
-你可以通过 [管理状态](https://beta.reactjs.org/learn/managing-state) 来了解更多个关于 React 使用状态以及你如何在应用里管理状态。
+你可以通过 [管理状态](https://beta.reactjs.org/learn/managing-state) 来了解更多关于 React 使用状态以及你如何在应用里管理状态。
 
 ### 步骤五 添加逆向数据流
 
@@ -274,7 +277,7 @@ Refer to the Managing State to dive deeper into how React uses state and how you
 
 React 保证数据流动是精确的，但是它需要更多的代码来实现双向绑定。如果你试着在输入框输入数据或者选择选择框，你会发现 React 忽略你的输入。这是有意为之的。通过 `<input value={filterText}></input>`,你已经设置输入的值永远等于 filterText 状态值，因为 filterText 的状态值从来没有被设置，输入值就不会变。
 
-你想要根据用户修改输入值跟新状态。状态值属于 FilterableProductTable ,因此只有它可以使用 setFilterText 和 setInStockOnly 。为了让 SearchBar 更新 FilterableProductTable 的状态值，你需要传递这些函数到 SearchBar 。
+你想要根据用户修改输入值更新状态。状态值属于 FilterableProductTable ,因此只有它可以使用 setFilterText 和 setInStockOnly 。为了让 SearchBar 更新 FilterableProductTable 的状态值，你需要传递这些函数到 SearchBar 。
 
 ```javascript
 function FilterableProductTable({ products }) {
