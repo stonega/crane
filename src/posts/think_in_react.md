@@ -168,15 +168,11 @@ export default function App() {
 ```
 不要对这段代码感到担心，在这个教程，我们更注重概念而不是代码。你可以通过[Describing the UI](https://beta.reactjs.org/learn/describing-the-ui) 更多了解这段代码。
 
-After building your components, you’ll have a library of reusable components that render your data model. Because this is a static app, the components will only return JSX. The component at the top of the hierarchy (FilterableProductTable) will take your data model as a prop. This is called one-way data flow because the data flows down from the top-level component to the ones at the bottom of the tree.
-
 构建组件完成后，你将拥有一个组件库来渲染你的数据。因为这是一个静态数据，组件将只返回 JSX 。顶层的组件 (FilterableProductTable) 将会接受数据模型作为 Prop 。这就是所谓的单向数据流，因为数据从顶层组件流向底层的组件。
 
 ### 步骤三 找到最小化但完整的应用状态
 
 想要 UI 用互动性，你需要运行用户改变数据模型。你需要太多状态管理来实现。
-
-Think of state as the minimal set of changing data that your app needs to remember. The most important principle for structuring state is to keep it DRY (Don’t Repeat Yourself). Figure out the absolute minimal representation of the state your application needs and compute everything else on-demand. For example, if you’re building a shopping list, you can store the items as an array in state. If you want to also display the number of items in the list, don’t store the number of items as another state value—instead, read the length of your array.
 
 状态其实是你的应用需要记住的实时变化的数据的最小集合。构建状态最重要的原则就是不要重复 [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)。找出你的应用所需要状态的最小代表，剩余的则通过计算实现。例如，如果你在构建一个购物清单，你可以将商品存储在一个数组里。如果你想展示商品的数量，不要存储数据在另一个状态值里，而是使用数组的长度。
 
