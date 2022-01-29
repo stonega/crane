@@ -229,3 +229,9 @@ mark {
   white-space: nowrap;
   width: 1px;
 }
+
+
+.credit {
+  font-size: 0.7rem;
+  text-align: end;
+}
