@@ -1,5 +1,5 @@
 ---
-title: About Aidan Charles Powell
+title: About Me
 layout: about.njk
 name: Stone
 ---
