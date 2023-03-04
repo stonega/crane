@@ -1,6 +1,6 @@
 # Crane
 
-## Personal site.
+## Personal site
 
 Building rocket with the crane.
 
