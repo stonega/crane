@@ -37,7 +37,7 @@
 }
 
 .site-title a:hover {
- filter: brightness(85%);
+  filter: brightness(85%);
 }
 
 .nav__list {

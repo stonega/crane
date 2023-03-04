@@ -1,0 +1,9 @@
+--- 
+layout: base.njk
+permalink: /tips/
+---
+
+<h1>All Tips</h1>
+
+{% set tipslist = collections['tips'] %}
+{% include "tips-list.njk" %}

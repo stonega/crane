@@ -24,6 +24,7 @@
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.0.2",
     "postcss-preset-env": "^8.0.1",
+    "prettier": "^2.8.4",
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
@@ -37,6 +38,7 @@
     "dev:site": "env ELEVENTY_ENV=development eleventy --serve",
     "build:assets": "webpack --mode production",
     "build:site": "env ELEVENTY_ENV=production eleventy",
+    "pretty": "prettier --write --list-different .",
     "clean": "rm -rf ./public"
   },
   "dependencies": {

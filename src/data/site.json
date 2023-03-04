@@ -1,5 +1,5 @@
 {
-  "name": "Crane",
+  "name": "Stone Edward",
   "description": "I am a UI developer.",
   "url": "https://stonegate.me",
   "author": {
@@ -15,8 +15,8 @@
       "external": false
     },
     {
-      "text": "About",
-      "url": "/about",
+      "text": "Tips",
+      "url": "/tips",
       "external": false
     }
   ],
