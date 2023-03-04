@@ -1,0 +1,21 @@
+.tips {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tips__header {
+  margin-bottom: 3rem;
+}
+
+.tips__content ul {
+  list-style-type: "👉";
+}
+
+.tips__content li::first-letter {
+  margin-left: 1rem;
+}
+
+.tips__content li {
+  margin-bottom: 2rem;
+}

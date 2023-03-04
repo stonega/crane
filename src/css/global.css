@@ -93,7 +93,7 @@ ul {
 
 b,
 strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 table {
@@ -126,17 +126,17 @@ td:only-child {
 
 * + h1,
 * + h2 {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 * + h3,
 * + h4,
 * + h5 {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 * + p {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 h2 + p,
@@ -206,7 +206,7 @@ pre::-webkit-scrollbar-thumb {
 
 pre,
 code {
-  font-family: 'Overpass Mono', monospace;
+  font-family: "Overpass Mono", monospace;
 }
 
 pre code {
@@ -229,7 +229,6 @@ mark {
   white-space: nowrap;
   width: 1px;
 }
-
 
 .credit {
   font-size: 0.7rem;

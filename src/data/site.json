@@ -1,7 +1,7 @@
 {
-  "name": "Crane",
+  "name": "Stone Edward",
   "description": "I am a UI developer.",
-  "url": "https://blog.stonegate.me",
+  "url": "https://stonegate.me",
   "author": {
     "name": "Stone",
     "email": "xijieyin@gmail.com",
@@ -15,8 +15,8 @@
       "external": false
     },
     {
-      "text": "About",
-      "url": "/about",
+      "text": "Tips",
+      "url": "/tips",
       "external": false
     }
   ],

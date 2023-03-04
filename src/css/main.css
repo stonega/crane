@@ -1,13 +1,15 @@
-@import 'global.css';
-@import 'variable.css';
-@import 'prism-theme.css';
-@import 'typography.css';
-@import 'post-list.css';
-@import 'hero.css';
-@import 'header.css';
-@import 'footer.css';
-@import 'post.css';
-@import 'about.css';
+@import "global.css";
+@import "variable.css";
+@import "prism-theme.css";
+@import "typography.css";
+@import "post-list.css";
+@import "hero.css";
+@import "header.css";
+@import "footer.css";
+@import "post.css";
+@import "about.css";
+@import "tips-list.css";
+@import "tips.css";
 
 .layout-wrapper {
   display: grid;

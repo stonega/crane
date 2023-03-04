@@ -1,6 +1,6 @@
 ---
 title: Thinking in React
-date: '2021-10-22'
+date: "2021-10-22"
 tags: [react, translate]
 description: Think in react.
 permalink: posts/{{ title | slug }}/index.html
@@ -36,11 +36,11 @@ JSON API 返回的数据如下：
 
 根据你的背景不同，将设计图纸划分为组件一般有以下几种方式：
 
-* **编程** 使用你创建函数或这对象的思路，其中一种思路是 [单一任务原则](https://en.wikipedia.org/wiki/Single_responsibility_principle), 是指一个组件应该只完成一项任务。如果它一直变大，那就应该分成更小的子组件。
+- **编程** 使用你创建函数或这对象的思路，其中一种思路是 [单一任务原则](https://en.wikipedia.org/wiki/Single_responsibility_principle), 是指一个组件应该只完成一项任务。如果它一直变大，那就应该分成更小的子组件。
 
-* **CSS** 根据你创建 CSS 选择器的思路（但是组件没有这么颗粒化）。
+- **CSS** 根据你创建 CSS 选择器的思路（但是组件没有这么颗粒化）。
 
-* **设计** 根据你设计图层的思路。
+- **设计** 根据你设计图层的思路。
 
 如果你的 JSON 结构好的话，你会发现它可以对应到 UI 结构的组件。这是因为 UI 和数据结构通常有相同的信息结构，也就是形状。将 UI 划分成每一个组件，每一个组件关联一个数据结构。
 
@@ -59,11 +59,11 @@ JSON API 返回的数据如下：
 Now that you’ve identified the components in the mockup, arrange them into a hierarchy. Components that appear within another component in the mockup should appear as a child in the hierarchy:
 现在你已经在设计图中分出了组件，并进行了分组。设计图中组件里的组件对应为架构里的子组件。
 
-* FilterableProductTable
-  * SearchBar
-  * ProductTable
-    * ProductCategoryRow
-    * ProductRow
+- FilterableProductTable
+  - SearchBar
+  - ProductTable
+    - ProductCategoryRow
+    - ProductRow
 
 ### 步骤二 用 React 构建静态页面
 
@@ -77,18 +77,13 @@ Now that you’ve identified the components in the mockup, arrange them into a h
 function ProductCategoryRow({ category }) {
   return (
     <tr>
-      <th colSpan="2">
-        {category}
-      </th>
+      <th colSpan="2">{category}</th>
     </tr>
   );
 }
 
 function ProductRow({ product }) {
-  const name = product.stocked ? product.name :
-    <span>
-      {product.name}
-    </span>;
+  const name = product.stocked ? product.name : <span>{product.name}</span>;
 
   return (
     <tr>
@@ -104,17 +99,9 @@ function ProductTable({ products }) {
 
   products.forEach((product) => {
     if (product.category !== lastCategory) {
-      rows.push(
-        <ProductCategoryRow
-          category={product.category}
-          key={product.category} />
-      );
+      rows.push(<ProductCategoryRow category={product.category} key={product.category} />);
     }
-    rows.push(
-      <ProductRow
-        product={product}
-        key={product.name} />
-    );
+    rows.push(<ProductRow product={product} key={product.name} />);
     lastCategory = product.category;
   });
 
@@ -136,9 +123,7 @@ function SearchBar() {
     <form>
       <input type="text" placeholder="Search..." />
       <label>
-        <input type="checkbox" />
-        {' '}
-        Only show products in stock
+        <input type="checkbox" /> Only show products in stock
       </label>
     </form>
   );
@@ -154,18 +139,19 @@ function FilterableProductTable({ products }) {
 }
 
 const PRODUCTS = [
-  {category: "Fruits", price: "$1", stocked: true, name: "Apple"},
-  {category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit"},
-  {category: "Fruits", price: "$2", stocked: false, name: "Passionfruit"},
-  {category: "Vegetables", price: "$2", stocked: true, name: "Spinach"},
-  {category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin"},
-  {category: "Vegetables", price: "$1", stocked: true, name: "Peas"}
+  { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
+  { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
+  { category: "Fruits", price: "$2", stocked: false, name: "Passionfruit" },
+  { category: "Vegetables", price: "$2", stocked: true, name: "Spinach" },
+  { category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Peas" }
 ];
 
 export default function App() {
   return <FilterableProductTable products={PRODUCTS} />;
 }
 ```
+
 不要对这段代码感到担心，在这个教程，我们更注重概念而不是代码。你可以通过[Describing the UI](https://beta.reactjs.org/learn/describing-the-ui) 更多了解这段代码。
 
 构建组件完成后，你将拥有一个组件库来渲染你的数据。因为这是一个静态数据，组件将只返回 JSX 。顶层的组件 (FilterableProductTable) 将会接受数据模型作为 Prop 。这就是所谓的单向数据流，因为数据从顶层组件流向底层的组件。
@@ -177,6 +163,7 @@ export default function App() {
 状态其实是你的应用需要记住的实时变化的数据的最小集合。构建状态最重要的原则就是不要重复 [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)。找出你的应用所需要状态的最小代表，剩余的则通过计算实现。例如，如果你在构建一个购物清单，你可以将商品存储在一个数组里。如果你想展示商品的数量，不要存储数据在另一个状态值里，而是使用数组的长度。
 
 以下是应用里的所有数据：
+
 1. 原始产品列表
 2. 用户输入内容
 3. 选择框数据
@@ -184,9 +171,9 @@ export default function App() {
 
 这其中那些是状态值？那些不是呢？
 
-* 数据不会改变，那一定不属于状态
-* 数据来自于父组件，一定不属于状态
-* 可以通过已有的状态值和数据值计算，那一定不属于状态值
+- 数据不会改变，那一定不属于状态
+- 数据来自于父组件，一定不属于状态
+- 可以通过已有的状态值和数据值计算，那一定不属于状态值
 
 剩余的基本都是状态值。
 
@@ -218,17 +205,17 @@ Props 和 State 是不同的，但是它们一起工作，父组件经常保持�
 2. 找出它们最接近的共同父级组件。
 3. 确定状态值的位置：
 
-    1. 通常，你可以将状态值放在共同父组件里。
-    2. 你可以将状态值放在共同父组件更上层的组件中。
-    3. 如果你找不到一个组件可以放置状态，你可以单独创建一个新的组件，并把他添加为共同父组件的上层组件。
+   1. 通常，你可以将状态值放在共同父组件里。
+   2. 你可以将状态值放在共同父组件更上层的组件中。
+   3. 如果你找不到一个组件可以放置状态，你可以单独创建一个新的组件，并把他添加为共同父组件的上层组件。
 
 在前面的步骤中，你发现了应用中需要两个状态值：搜索框输入值和选择框输入值。在这个例子中，它们总是共同出现，因此可以认为它们是同一个状态。
 
 现在我们来整理这些状态值：
 
 1. 找到使用状态值的组件
-    * ProructTable 需要更具状态过滤产品列表。
-    * SearchBar 需要展示状态值。
+   - ProructTable 需要更具状态过滤产品列表。
+   - SearchBar 需要展示状态值。
 2. 找到共同的父组件。最先的共同父组件是 FilterableProductTable 。
 3. 决定状态值位置。状态将位于 FilterableProductTable 。
 
@@ -246,27 +233,25 @@ function FilterableProductTable({ products }) {
 
 ```js
 <div>
-  <SearchBar 
-    filterText={filterText} 
-    inStockOnly={inStockOnly} />
-  <ProductTable 
-    products={products}
-    filterText={filterText}
-    inStockOnly={inStockOnly} />
+  <SearchBar filterText={filterText} inStockOnly={inStockOnly} />
+  <ProductTable products={products} filterText={filterText} inStockOnly={inStockOnly} />
 </div>
 ```
+
 你可以看到应用如何执行。通过修改 useState('') 为 useState('fruit') 修改 filerText 初始值。你可以看到搜索值和表格更新。
 
 在上面的 sandbox 里， ProductTable 和 SearchBar 读取 filerText 和 inStockOnly props 来渲染表格，输入框和选择框。例如，这里是 SearchBar 设置初始值。
+
 ```javascript
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} 
+      <input
+        type="text"
+        value={filterText}
         placeholder="Search..."/>
 ```
+
 Refer to the Managing State to dive deeper into how React uses state and how you can organize your app with it.
 
 你可以通过 [管理状态](https://beta.reactjs.org/learn/managing-state) 来了解更多关于 React 使用状态以及你如何在应用里管理状态。
@@ -286,8 +271,8 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
+      <SearchBar
+        filterText={filterText}
         inStockOnly={inStockOnly}
         onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
@@ -296,12 +281,14 @@ function FilterableProductTable({ products }) {
 Inside the SearchBar, you will add the onChange event handlers and set the parent state from them:
 
 在 SearchBar 中，你可以添加 onChange 事件处理和设置父级组件。
+
 ```javascript
-<input 
-  type="text" 
-  value={filterText} 
-  placeholder="Search..." 
-  onChange={(e) => onFilterTextChange(e.target.value)} />
+<input
+  type="text"
+  value={filterText}
+  placeholder="Search..."
+  onChange={(e) => onFilterTextChange(e.target.value)}
+/>
 ```
 
 现在应用正常工作了。
