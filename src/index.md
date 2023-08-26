@@ -17,10 +17,6 @@ I am well-versed in various blockchain platforms such as Ethereum, Solana, Bitco
 
 ## ✍️
 
-[Tsacdop](https://tsacdop.app)
-
-Enjoy podcast with Tsacdop.
-
 [Jenkins Board](https://github.com/stonega/jenkins-board)
 
 Jenkins board, build with flutter.
@@ -29,9 +25,9 @@ Jenkins board, build with flutter.
 
 Easy to access web3.0 develop helpers.
 
-[Lens.ink 🍀](https://lens.ink)
+[Tsacdop](https://tsacdop.app)
 
-Lens profile link.
+Enjoy podcast with Tsacdop.
 
 ## ❤️
 
