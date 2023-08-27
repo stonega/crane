@@ -36,5 +36,8 @@ import { PrismaClient as PrismaMongoClient } from "../prisma/generated/mongo_cli
 
 ```
 
-值得注意的是，如果你连接到 Mongo 数据库报以下错误时，`import { PrismaClient as PrismaMongoClient } from "../prisma/generated/mongo_client";
-`, 可以尝试在环境变量文件 `MONGO_URL` 后添加 `?authSource=admin`
+值得注意的是，如果你连接到 Mongo 数据库报以下错误时
+
+`import { PrismaClient as PrismaMongoClient } from "../prisma/generated/mongo_client";`
+
+可以尝试在环境变量文件 `MONGO_URL` 后添加 `?authSource=admin`

@@ -17,6 +17,11 @@
   min-height: 100%;
 }
 
+#vanta-element {
+  height: 250px;
+  width: 100%;
+}
+
 .main {
   display: flex;
   padding-bottom: 4rem;

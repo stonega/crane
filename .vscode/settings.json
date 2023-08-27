@@ -6,7 +6,8 @@
     "nextjs",
     "purgecss",
     "Recos",
-    "syntaxhighlight"
+    "syntaxhighlight",
+    "vanta"
   ],
   "[markdown]": {
     "editor.wordWrapColumn": 100,
