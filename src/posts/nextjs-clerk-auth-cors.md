@@ -27,6 +27,8 @@ export async function GET(request: Request) {
 
 ## Step 2. Update middleware
 
+In this middleware, we first checks if the incoming request is an OPTIONS request, which is a preflight request that is sent by the browser to check if a cross-origin request is allowed. If it is an OPTIONS request, the middleware returns a response with headers that allow cross-origin requests. If it's not an OPTIONS request, the middleware calls the authMiddleware function from the Clerk Next.js library.
+
 ```typescript
 import { authMiddleware } from "@clerk/nextjs";
 import { NextFetchEvent, NextRequest } from "next/server";
@@ -41,14 +43,15 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
         "Access-Control-Allow-Headers":
           "Content-Type, Authorization,  Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version",
-        "Access-Control-Max-Age": "86400",
-      },
+        "Access-Control-Max-Age": "86400"
+      }
     });
   }
   const auth = authMiddleware({});
   return auth(request, event);
 }
 ```
+
 ## Conclusion
 
 In this tutorial, we walked through how to fix the CORS issue in a Clerk Next.js project. We modified the API endpoint to allow cross-origin requests, and added some headers to the response to allow the browser to access the resource.
