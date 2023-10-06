@@ -8,7 +8,7 @@ permalink: posts/{{ title | slug }}/index.html
 
 If you're building a web application with Next.js and using the Clerk authentication service, you may encounter a CORS (Cross-Origin Resource Sharing) issue when making API requests outside the app. This issue occurs when the browser blocks requests to a different domain than the one the app is hosted on.
 
-In this tutorial, we'll walk through how to fix the CORS issue in a Clerk Next.js project.
+With the follow steps, we'll walk through how to fix the CORS issue in a Clerk Next.js project.
 
 ## Step 1. Add CORS Headers to the API Endpoint
 
