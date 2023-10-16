@@ -9,3 +9,8 @@ icon: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg
     ```bash
     find . -type f -size +100M
     ```
+- Add tracked file to gitignore
+    ```bash
+    git rm --cached <file>
+    rm <file>
+    ```
