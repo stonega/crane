@@ -21,3 +21,13 @@ icon: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg
     }
 
     ```
+
+- Line clump
+    ```css
+    .line-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+    ```
