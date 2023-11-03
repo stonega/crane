@@ -187,8 +187,11 @@ pre {
   max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
-  scrollbar-width: thin;
-  scrollbar-color: color-mod(var(--color) alpha(80%));
+  /* scrollbar-width: thin;
+  scrollbar-color: color-mod(var(--color) alpha(60%));
+  scrollbar-base-color: color-mod(var(--accent) a(20%)); */
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 pre::-webkit-scrollbar {
