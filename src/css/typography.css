@@ -21,7 +21,7 @@ body {
   font-variant-ligatures: contextual;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
-  font-family: "Source Sans Pro", "Arial", sans-serif;
+  font-family: 'Spline Sans Mono', "Source Sans Pro", "Arial", monospace;;
 }
 
 h1,
