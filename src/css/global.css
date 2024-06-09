@@ -6,7 +6,7 @@ html {
 
 body {
   background-color: var(--background);
-  font-family: 'Spline Sans Mono', monospace;
+  font-family: "Spline Sans Mono", monospace;
 }
 
 body::-webkit-scrollbar {

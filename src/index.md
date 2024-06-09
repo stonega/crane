@@ -17,13 +17,13 @@ I am well-versed in various blockchain platforms such as Ethereum, Solana, Bitco
 
 ## ✍️
 
+[utxos.xyz](https://utxos.xyz)
+
+UTXOs dashboard.
+
 [Jenkins Board](https://github.com/stonega/jenkins-board)
 
 Jenkins board, build with flutter.
-
-[Web3Helpers](https://web3helpers.xyz)
-
-Easy to access web3.0 develop helpers.
 
 [Tsacdop](https://tsacdop.app)
 

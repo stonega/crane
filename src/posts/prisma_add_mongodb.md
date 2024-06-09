@@ -27,6 +27,7 @@ model subtitle {
 }
 
 ```
+
 主要是在 client 里面添加 output 字段，首先在项目 .`env` 文件中添加 `MONGO_URL`,然后执行 `prisma generate --schema=prisma/mongo_schema.prisma` ，就会在 `prisma` 目录下生成 prisma client 的代码。
 
 通过以下方法引入后就可以使用了。
