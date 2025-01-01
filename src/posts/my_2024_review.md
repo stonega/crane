@@ -14,7 +14,7 @@ permalink: posts/{{ title | slug }}/index.html
 
 今天工作中技术上的转变包括从 `Nuxtjs v2` 全面升级到 `Nuxtjs v3`，UI 组件也切换到了 `Nuxt UI` ，css 使用 `tailwindcss` ，开发体验的提升是显而易见的。同时也有学习开发 `Nuxt Module` .
 
-个人开发中，编辑器终于切换到了 `nvim` ，终端使用 `kitty` 。经过一段时间的配置，用起来都很顺手了，感谢 `avante.nvim` , AI 用的也渐渐多起来了，尤其是最近一段时间，深深感受到 AI 的影响之大，要学习把 80% 的工作交给 AI 完成。
+个人开发中，编辑器终于切换到了 `nvim` ，终端使用 `kitty` 。经过一段时间的配置，用起来都很顺手了，感谢 `avante.nvim` , AI 用的也渐渐多起来了，尤其是最近一段时间，深深感受到 AI 的影响之大，要学习把 80% 的工作交给 AI 完成。最近做了一个小项目，叫作 `commits-assitant`，大部分代码是通过 AI 完成的，通过 `git hooks` 把提交的 `commits` 存下来，然后可以再用 AI 分析总结，当然还有生成 commit 信息的功能，AI 的出现让开发这些小工具变得很容易，这样更容易 DIY 满足自己的需求。
 
 # 生活
 
