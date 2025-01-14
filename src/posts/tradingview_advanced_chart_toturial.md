@@ -2,7 +2,7 @@
 title: TradingView Advanced Chart 开发入门
 date: 2025-01-14
 permalink: posts/{{ title | slug }}/index.html
-description: TradingView 开发入门
+description: TradingView advanced charts 开发入门
 ---
 本文介绍的是在 Web 项目中接入 TradingView Advanced Chart 。
 ## 申请
