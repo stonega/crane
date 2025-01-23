@@ -18,8 +18,6 @@ permalink: posts/{{ title | slug }}/index.html
 
 [lens.ink](https://lens.ink)
 
-![](./images/life.jpg)
-
 Lens.ink 是一个基于 Lens Protocol 的 web 应用，目标是想做一个 lens 用户的应用聚合页，在这里可以快速访问 lens 生态内的应用。最后的结果并不如人意，首先是一开始的需求设定就不太正确，这并不是一个很好的需求，最终完成的项目质量也不够高。
 
 这个项目是我最开始使用 NextJs 开发的项目，后来新项目都在用 NextJs 了，工作依旧在用 NuxtJs。另外就是第一次用 GraphQL 的 API。Tailwinds 也用的越来越熟练了。
@@ -46,9 +44,10 @@ Web3Helpers 是一个 web3 工具集合应用，目标是想把 web3 开发中�
 
 2023 年有一个很重要的任务是要升级到 `NuxtJs3.0 `以及对应的` Vue3.0`。
 
+
 ## 生活
 
-![](https://raw.githubusercontent.com/stonega/crane/master/src/images/2022-review-life.jpg)
+![](./images/life.jpg)
 
 2022 年疫情终于在 n 多次的核酸后结束了，健康码终于不用再打开了，感恩家人朋友都顺利度过了。
 
