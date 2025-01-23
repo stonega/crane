@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+---
+{%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
+<article class="tips">
+  <header class="tips__header">
+    <h1>{{ title }}</h1>
+  </header>
+
+  <main class="tips__content">
+    {{ content | safe }}
+  </main>
+</article>
+

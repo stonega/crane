@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ title or metadata.title }}</title>
+		<meta name="description" content="{{ description or metadata.description }}">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital@1&display=swap" rel="stylesheet">
+		<meta name="generator" content="{{ eleventy.generator }}">
+    <link rel="icon" type= “image/x-icon” href="/favicon.ico">
+
+		{%- css %}{% include "public/css/index.css" %}{% endcss %}
+		{%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
+		{%- css %}{% include "public/css/tailwind.css" %}{% endcss %}
+
+		<style>{% getBundle "css" %}</style>
+		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="text-lg">{{ metadata.title }}</a>
+		</header>
+
+		<main id="skip">
+			<heading-anchors>
+				{{ content | safe }}
+			</heading-anchors>
+		</main>
+
+		<footer class="flex space-x-2 items-center">
+			<button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+			<p><em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
+		</footer>
+
+		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
+		<script>
+			// Function to set theme
+			function setTheme(theme) {
+				if (theme === 'dark') {
+					document.documentElement.classList.add('dark');
+					document.documentElement.classList.remove('light');
+					toggle.innerHTML = '☀️';
+				} else {
+					document.documentElement.classList.add('light');
+					document.documentElement.classList.remove('dark');
+					toggle.innerHTML = '🌙';
+				}
+			}
+
+			// Get DOM elements and system preferences
+			const toggle = document.getElementById('dark-mode-toggle');
+			const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+			// Set initial theme based on system preference
+			setTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
+
+			// Listen for system theme changes
+			darkModeMediaQuery.addEventListener('change', (e) => {
+				setTheme(e.matches ? 'dark' : 'light');
+			});
+
+			// Toggle theme manually
+			toggle.addEventListener('click', () => {
+				const isDark = document.documentElement.classList.contains('dark');
+				setTheme(isDark ? 'light' : 'dark');
+			});
+		</script>
+	</body>
+</html>

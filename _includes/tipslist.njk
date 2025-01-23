@@ -1,0 +1,15 @@
+<ul class="mt-4 flex flex-col space-y-2">
+  {% for tips in tipslist %}
+    <li class="flex items-center space-x-2">
+			<div class="size-4">
+				<img class="size-4" src="{{ tips.data.icon }}" />
+			</div>
+      <a href="{{ tips.url }}">
+        <p>
+          {{ tips.data.title }}
+        </p>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
