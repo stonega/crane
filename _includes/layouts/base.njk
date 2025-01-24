@@ -50,18 +50,27 @@
 					document.documentElement.classList.remove('dark');
 					toggle.innerHTML = '🌙';
 				}
+				// Save theme preference to localStorage
+				localStorage.setItem('theme', theme);
 			}
 
 			// Get DOM elements and system preferences
 			const toggle = document.getElementById('dark-mode-toggle');
 			const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-			// Set initial theme based on system preference
+			// Get saved theme from localStorage or use system preference
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme) {
+				setTheme(savedTheme);
+			} else {
 			setTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
+			}
 
-			// Listen for system theme changes
+			// Listen for system theme changes (only if no saved preference)
 			darkModeMediaQuery.addEventListener('change', (e) => {
+			if (!localStorage.getItem('theme')) {
 				setTheme(e.matches ? 'dark' : 'light');
+			}
 			});
 
 			// Toggle theme manually
