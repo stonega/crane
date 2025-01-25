@@ -1,8 +1,2 @@
-<div>
-
-</div>
-<ul class="mt-4 flex flex-col space-y-2">
-	<li><a href="/blog">↪ Blog</a></li>
-	<li><a href="/tips">↪ Tips</a></li>
-	<li><a href="/about">↪ Me</a></li>
-</ul>
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}

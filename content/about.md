@@ -1,5 +1,4 @@
 <h1>Stone</h1>
-<div class="mt-4"></div>
 
 ## 👋
 

@@ -6,8 +6,9 @@
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital@1&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<meta name="generator" content="{{ eleventy.generator }}">
     <link rel="icon" type= “image/x-icon” href="/favicon.ico">
 
@@ -21,8 +22,9 @@
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
-		<header>
-			<a href="/" class="text-lg">{{ metadata.title }}</a>
+		<header class="flex justify-between">
+			<a href="/" class="text-lg title">{{ metadata.title }}</a>
+			<button id="dark-mode-toggle" class="cursor-pointer" aria-label="Toggle dark mode">🌙</button>
 		</header>
 
 		<main id="skip">
@@ -30,9 +32,12 @@
 				{{ content | safe }}
 			</heading-anchors>
 		</main>
-
-		<footer class="flex space-x-2 items-center">
-			<button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+		<ul class="mt-6 flex space-x-4 text-lg">
+			<li class="underline"><a href="/">Home</a></li>
+			<li class="underline"><a href="/tips">Tips</a></li>
+			<li class="underline"><a href="/about">About</a></li>
+		</ul>
+		<footer class="flex space-x-2 items-center text-sm mt-2">
 			<p><em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
 		</footer>
 

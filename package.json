@@ -1,7 +1,7 @@
 {
 	"name": "crane",
 	"version": "9.0.0",
-	"description": "A starter repository for a blog web site using the Eleventy site generator.",
+	"description": "I'm Store, this is my personal site.",
 	"type": "module",
 	"scripts": {
 		"build": "npx @11ty/eleventy",
@@ -9,7 +9,7 @@
 		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-		"tw:watch": "npx tailwindcss -o public/css/tailwind.css -w"
+		"tw:watch": "@tailwindcss/cli -o public/css/tailwind.css -w"
 	},
 	"repository": {
 		"type": "git",
@@ -38,8 +38,10 @@
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-rss": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"@tailwindcss/cli": "^4.0.0",
 		"cross-env": "^7.0.3",
 		"luxon": "^3.5.0",
+		"tailwindcss": "^4.0.0",
 		"zod": "^3.23.8",
 		"zod-validation-error": "^3.3.1"
 	},
