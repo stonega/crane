@@ -168,6 +168,10 @@ pre:not([class*="language-"]) {
 }
 code {
 	word-break: break-all;
+	color: var(--text-color-link-active);
+	background-color: var(--color-gray-20);
+	padding: .2rem 1ch;
+	border-radius: .5rem;
 }
 
 /* Posts list */
