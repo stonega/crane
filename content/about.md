@@ -1,5 +1,3 @@
-<h1>Stone</h1>
-
 ## 👋
 
 Hey, I am **Stone**. I am a UI developer.

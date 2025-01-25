@@ -1,3 +1,8 @@
+@font-face {
+	font-family: Morganite;
+	src: url('/fonts/Morganite-Bold.ttf') format('truetype');
+	font-display: swap;
+}
 /* Defaults */
 :root {
 	--font-family: "Azeret Mono", -apple-system, system-ui, sans-serif;
@@ -14,7 +19,7 @@
 	--color-gray-50: #C0C0C0;
 	--color-gray-90: #444;
 
-	--background-color: #fff;
+	--background-color: #E5E3D4;
 
 	--text-color: var(--color-gray-90);
 	--text-color-link: #000;
@@ -40,6 +45,16 @@
 * {
 	box-sizing: border-box;
   text-decoration-thickness: var(--border-thickness) !important;
+}
+
+::selection {
+  background-color: #257180;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #257180;
+  color: white;
 }
 
 @view-transition {
@@ -118,13 +133,18 @@ a[href]:active {
 }
 
 header {
-	border-bottom: 1px solid var(--color-gray-20);
-	padding: 1rem 0;
+	padding: .5rem 0;
+}
+
+.text-stone {
+	font-family: Morganite;
+	font-size: 100px !important;
+	text-transform: uppercase;
+	line-height: 1;
 }
 
 header a {
 	color: var(--text-color-link-active) !important;
-	font-size: 1.2rem !important;
 }
 
 .links-nextprev {
@@ -175,10 +195,6 @@ code {
 	border-radius: .5rem;
 }
 
-/* Posts list */
-.postlist {
-	padding-top: 2rem;
-}
 .postlist-item {
 	display: flex;
 	flex-wrap: wrap;

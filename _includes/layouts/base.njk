@@ -23,8 +23,7 @@
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header class="flex justify-between">
-			<a href="/" class="text-lg title">{{ metadata.title }}</a>
-			<button id="dark-mode-toggle" class="cursor-pointer" aria-label="Toggle dark mode">🌙</button>
+			<a href="/" class="text-stone">{{ metadata.title }}</a>
 		</header>
 
 		<main id="skip">
@@ -39,6 +38,7 @@
 			<li class="underline"><a href="/feed/feed.xml">FEED</a></li>
 		</ul>
 		<footer class="flex space-x-2 items-center text-sm mt-2">
+			<button id="dark-mode-toggle" class="cursor-pointer" aria-label="Toggle dark mode">🌙</button>
 			<p>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
 		</footer>
 
