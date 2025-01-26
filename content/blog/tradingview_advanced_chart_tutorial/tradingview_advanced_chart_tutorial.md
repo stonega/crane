@@ -11,11 +11,11 @@ permalink: posts/{{ title | slug }}/index.html
 TradingView Advanced Chart 是免费使用的，代码文件需要通过[官网](https://www.tradingview.com/advanced-charts/)进行申请，申请的时候需要使用公司邮箱，申请后一周内会收到邮件回复，按照邮件内容填写并签署协议文件后回复即可，注意协议文件中邮箱要与申请邮箱保持一致。
 ## 使用
 使用 TradingView widget 分三步。
-第一步：
-下载 https://github.com/tradingview/charting_library/tree/master/charting_library ，并放到项目公开目录，一般是 `public` 。
-第二步：
+- 第一步：
+从项目仓库 [下载](https://github.com/tradingview/charting_library/tree/master/charting_library) ，并放到项目公开目录，一般是 `public` 。
+- 第二步：
 在 DOM 中插入 `<div id="tv_chart_container"></div>`
-第三步：
+- 第三步：
 初始化 `tvWidget` 。
 
 ```javascript

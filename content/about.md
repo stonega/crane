@@ -1,3 +1,5 @@
+<a href="/" class="text-stone">STONE</a>
+
 ## 👋
 
 Hey, I am **Stone**. I am a UI developer.

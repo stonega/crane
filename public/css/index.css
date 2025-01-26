@@ -117,7 +117,6 @@ p:last-child {
 }
 p {
 	line-height: 2rem;
-	word-break: break-all;
 }
 
 li {
@@ -139,12 +138,9 @@ header {
 .text-stone {
 	font-family: Morganite;
 	font-size: 100px !important;
+	color: var(--text-color-link-active) !important;
 	text-transform: uppercase;
 	line-height: 1;
-}
-
-header a {
-	color: var(--text-color-link-active) !important;
 }
 
 .links-nextprev {
@@ -190,7 +186,7 @@ pre:not([class*="language-"]) {
 code {
 	word-break: break-all;
 	color: var(--text-color-link-active);
-	background-color: var(--color-gray-20);
+	background-color: color-mix(in srgb, var(--background-color) 85%, black);
 	padding: .2rem 1ch;
 	border-radius: .5rem;
 }
