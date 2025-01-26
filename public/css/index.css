@@ -23,7 +23,7 @@
 
 	--text-color: var(--color-gray-90);
 	--text-color-link: #000;
-	--text-color-link-active: #257180;
+	--text-color-link-active: #257480;
 	--text-color-link-visited: #555;
 }
 
@@ -34,7 +34,7 @@
 
 	/* --text-color is assigned to --color-gray-_ above */
 	--text-color-link: #eee;
-	--text-color-link-active: #257180;
+	--text-color-link-active: #257480;
 	--text-color-link-visited: #aaa;
 
 	--background-color: #0a2328;
@@ -48,12 +48,12 @@
 }
 
 ::selection {
-  background-color: #257180;
+  background-color: #257480;
   color: white;
 }
 
 ::-moz-selection {
-  background-color: #257180;
+  background-color: #257480;
   color: white;
 }
 
