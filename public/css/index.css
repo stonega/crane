@@ -244,3 +244,26 @@ code {
 .tips__content li::first-letter {
   margin-left: .5rem;
 }
+
+/* Theme swtich effect */
+::view-transition-new(root) {
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="0" cy="0" r="20" fill="white"/></svg>')
+    top left / 0 no-repeat;
+  animation: scale 1.5s cubic-bezier(.19, 1, .22, 1);
+	transform-origin: top left;
+}
+
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: none;
+  z-index: -1;
+}
+.dark::view-transition-new(root) {
+  animation: scale 1.5s cubic-bezier(.19, 1, .22, 1);
+}
+
+@keyframes scale {
+  to {
+    mask-size: 300vmax;
+  }
+}

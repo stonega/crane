@@ -64,20 +64,25 @@
 			if (savedTheme) {
 				setTheme(savedTheme);
 			} else {
-			setTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
+				setTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
 			}
 
 			// Listen for system theme changes (only if no saved preference)
 			darkModeMediaQuery.addEventListener('change', (e) => {
-			if (!localStorage.getItem('theme')) {
-				setTheme(e.matches ? 'dark' : 'light');
-			}
+				if (!localStorage.getItem('theme')) {
+					setTheme(e.matches ? 'dark' : 'light');
+				}
 			});
 
 			// Toggle theme manually
 			toggle.addEventListener('click', () => {
 				const isDark = document.documentElement.classList.contains('dark');
-				setTheme(isDark ? 'light' : 'dark');
+				if (!document.startViewTransition) {
+					setTheme(isDark ? 'light' : 'dark');
+				}
+				document.startViewTransition(() => {
+					setTheme(isDark ? 'light' : 'dark');
+				});
 			});
 		</script>
 	</body>
