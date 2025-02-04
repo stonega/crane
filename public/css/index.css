@@ -103,7 +103,8 @@ iframe {
 
 h1 {
 	font-size: 1.6rem !important;
-	line-height: 6rem !important;
+	line-height: 2rem !important;
+	margin: 2rem 0;
 	font-weight: bold;
 }
 h2 {

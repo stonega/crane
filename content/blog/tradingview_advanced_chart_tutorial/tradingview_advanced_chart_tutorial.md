@@ -8,7 +8,7 @@ permalink: posts/{{ title | slug }}/index.html
 
 本文介绍的是在 Web 项目中接入 TradingView Advanced Chart 。
 ## 申请
-TradingView Advanced Chart 是免费使用的，代码文件需要通过[官网](https://www.tradingview.com/advanced-charts/)进行申请，申请的时候需要使用公司邮箱，申请后一周内会收到邮件回复，按照邮件内容填写并签署协议文件后回复即可，注意协议文件中邮箱要与申请邮箱保持一致。
+TradingView Advanced Chart 是免费使用的，代码文件需要通过 [官网](https://www.tradingview.com/advanced-charts/) 进行申请，申请的时候需要使用公司邮箱，申请后一周内会收到邮件回复，按照邮件内容填写并签署协议文件后回复即可，注意协议文件中邮箱要与申请邮箱保持一致。
 ## 使用
 使用 TradingView widget 分三步。
 - 第一步：
@@ -44,7 +44,7 @@ window.tvWidget = new TradingView.widget({
 
 `autosize` 设置为 `true` , 可以让 widget 始终占满父容器大小，这样只需要定义父容器样式就可以了。
 `timiezone` 设置 `Intl.DateTimeFormat().resolvedOptions().timeZone` , 可以在界面上按用户时区显示时间。
-`disabled_features` 和 `enabled_features` 用于选择功能，当你需要隐藏某些功能时，就需要在这里配置，功能列表具体可参考 `https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets` 。我自己的配置如下：
+`disabled_features` 和 `enabled_features` 用于选择功能，当你需要隐藏某些功能时，就需要在这里配置，功能列表具体可参考 [文档链接](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets) 。我自己的配置如下：
 
 ```js
 disabled_features: [
@@ -70,12 +70,15 @@ enabled_features: ['show_interval_dialog_on_key_press', 'items_favoriting'],
 可以参考下图获取 UI 关键字：
 
 ![](./images/user-interface-tradingview.png)
+
+
 `custom_themes`  用于设置主题，一般需要定义 `light` 和 `dark` 主题。
-主题包括 `color1` `color2` `color3` `color4` `color5` `color6` `color7` `white` `black` 九个颜色，其中 `color1` 是主题色，`color3` 是红色，`color4` 是绿色。 你可以在这里 https://codepen.io/tradingview/pen/abgzyBW 设置好主题，然后复制到项目中。
+主题包括 `color1` `color2` `color3` `color4` `color5` `color6` `color7` `white` `black` 九个颜色，其中 `color1` 是主题色，`color3` 是红色，`color4` 是绿色。 你可以在 [这里](https://codepen.io/tradingview/pen/abgzyBW) 设置好主题，然后复制到项目中。
+
 
 ![](./images/theme-settings.png)
 
-剩余一个配置就是 `datafeed` ，这个也是最主要的配置，`datafeed` 主要提供以下方法。文档链接  https://www.tradingview.com/charting-library-docs/latest/connecting_data/datafeed-api/required-methods/#onready 。
+剩余一个配置就是 `datafeed` ，这个也是最主要的配置，`datafeed` 主要提供以下方法。[文档链接](https://www.tradingview.com/charting-library-docs/latest/connecting_data/datafeed-api/required-methods/#onready) .
 ```ts
 interface Datafeed {
 	onReady(callback: OnReadyCallback) => void;
