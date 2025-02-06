@@ -17,8 +17,8 @@ permalink: posts/2025-spring-festival-holiday/index.html
 
 {% renderTemplate "webc" %}
 <image-compare @name="range-enabled" @value="50">
-	<img src="./images/docket_old.png" class="old-img" alt="Docket old" loading="lazy">
-	<img src="./images/docket_new.png" class="new-img" alt="Docket new" loading="lazy">
+	<img src="./images/docket_new.png" alt="Docket new" loading="lazy">
+	<img src="./images/docket_old.png" alt="Docket old" loading="lazy">
 </image-compare>
 {% endrenderTemplate %}
 

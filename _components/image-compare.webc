@@ -9,11 +9,43 @@
 </template>
 
 <style webc:scoped>
+:host input[type='range'] {
+	width: 100%;
+  -webkit-appearance: none; /* Override default look */
+  height: 8px; /* Adjust height as needed */
+  background: #d3d3d3; /* Default track color */
+  outline: none; /* Remove outline */
+  border-radius: 4px; /* Rounded corners */
+  height: 8px; /* Adjust height as needed */
+  background: transparent; /* Default track color */
+  outline: none; /* Remove outline */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Thumb styles */
+:host input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px; /* Adjust thumb size */
+  height: 30px;
+  background: #257480; /* Thumb color */
+  cursor: pointer;
+  border-radius: 50%; /* Make it round */
+}
+
+:host input[type='range']::-moz-range-thumb {
+  width: 24px; /* Adjust thumb size */
+  height: 24px;
+  background: #257480; /* Thumb color */
+  cursor: pointer;
+  border-radius: 50%; /* Make it round */
+  border: none; /* Remove border if any */
+}
 :host {
 	display: grid;
 	position: relative;
 	max-width: 40em;
-	height: 400px;
+	aspect-ratio: 16 / 9;
 }
 :host [disabled] {
 	cursor: not-allowed;
@@ -27,13 +59,14 @@
 	width: 100%;
 	height: auto;
 	object-fit: cover;
-	grid-area: 2/1;
 }
 :host .slider {
 	z-index: 2;
 	height: 100%;
 	display: flex;
 	align-items: center;
+	position: absolute;
+	top: 0;
 }
 :host picture:first-child img {
 	z-index: 1;
