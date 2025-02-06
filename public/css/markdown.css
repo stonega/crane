@@ -7,3 +7,7 @@ a[href^="http"] {
 	text-decoration: underline;
 }
 
+img {
+	border-radius: .5rem;
+	margin: 8px 0;
+}

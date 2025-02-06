@@ -45,7 +45,7 @@
 	display: grid;
 	position: relative;
 	max-width: 40em;
-	aspect-ratio: 16 / 9;
+	aspect-ratio: 16 / 10;
 }
 :host [disabled] {
 	cursor: not-allowed;
@@ -57,7 +57,6 @@
 :host img {
 	display: block;
 	width: 100%;
-	height: auto;
 	object-fit: cover;
 }
 :host .slider {
