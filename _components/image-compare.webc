@@ -1,0 +1,62 @@
+<template webc:root :id="uid" aria-label="Compare two images">
+	<div class="slider">
+		<label :for="uid + '-slider'" class="visually-hidden">
+			How much of the image do you want to be hidden?
+		</label>
+		<input type="range" :name="name" :value="value" :aria-controls="uid" :id="uid + '-slider'">
+	</div>
+	<slot>Don’t forget the images!</slot>
+</template>
+
+<link rel="stylesheet" href="visually-hidden.css">
+
+<!-- note that this is the same CSS as image-compare-disabled so it gets de-duplicated/shared for free -->
+<style webc:scoped>
+:host {
+	display: grid;
+	max-width: 20em;
+}
+:host [disabled] {
+	cursor: not-allowed;
+}
+:host input[type='range'] {
+	width: 100%;
+}
+:host .slider,
+:host img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	grid-area: 2/1;
+}
+:host .slider {
+	z-index: 1;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+:host img:first-of-type {
+	clip-path: inset(0 0 0 var(--position));
+}
+</style>
+
+<style @html="`#${uid} { --position: ${value}%; }`"></style>
+
+<script>
+customElements.define("image-compare", class extends HTMLElement {
+	connectedCallback() {
+		this.range = this.querySelector(":scope input[type='range']");
+		this.range.addEventListener("input", (e) => this.oninput(e.target.value));
+
+		// Synchronize the value if it changed before JS
+		this.oninput(this.range.value);
+	}
+
+	oninput(value) {
+		requestAnimationFrame(() => {
+			this.style.setProperty("--position", `${value}%`);
+		});
+	}
+})
+</script>

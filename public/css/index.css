@@ -205,6 +205,7 @@ code {
 }
 .postlist-date {
 	color: var(--color-gray-90);
+	font-size: .9rem;
 }
 .postlist-link {
 	font-size: 1.12em;

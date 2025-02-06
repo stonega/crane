@@ -13,11 +13,31 @@
     <link rel="icon" type= “image/x-icon” href="/favicon.ico">
 
 		{%- css %}{% include "public/css/index.css" %}{% endcss %}
-		{%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
 		{%- css %}{% include "public/css/tailwind.css" %}{% endcss %}
-
 		<style>{% getBundle "css" %}</style>
+
 		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
+		{%- js %}{% include "lib/theme.js" %}{% endjs %}
+		<script>
+			const initTheme = (theme) => {
+				if (theme === 'dark') {
+					document.documentElement.classList.add('dark');
+					document.documentElement.classList.remove('light');
+				} else {
+					document.documentElement.classList.add('light');
+					document.documentElement.classList.remove('dark');
+				}
+			}
+			// Get system preferences
+			const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+			// Get saved theme from localStorage or use system preference
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme) {
+				initTheme(savedTheme);
+			} else {
+				initTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
+			}
+		</script>
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -33,11 +53,11 @@
 			<li class="underline"><a href="/feed/feed.xml">FEED</a></li>
 		</ul>
 		<footer class="flex space-x-2 items-center text-sm mt-2">
-			<button id="dark-mode-toggle" class="cursor-pointer" aria-label="Toggle dark mode">🌙</button>
+			<button id="dark-mode-toggle" class="cursor-pointer" aria-label="Toggle Dark Mode">
+				<span id="theme-icon"></span>
+			</button>
 			<p>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
 		</footer>
-
 		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
-		{%- js %}{% include "../../lib/theme.js" %}{% endjs %}
 	</body>
 </html>

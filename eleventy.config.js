@@ -1,5 +1,7 @@
 import { IdAttributePlugin, InputPathToUrlTransformPlugin, HtmlBasePlugin } from "@11ty/eleventy";
+import { EleventyRenderPlugin } from "@11ty/eleventy";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
@@ -24,6 +26,8 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addWatchTarget("_includes/**/*.{svg,webp,png,jpg,jpeg,gif}");
 	eleventyConfig.addWatchTarget("public/**/*.{css}");
 
+	eleventyConfig.ignores.add("README.md");
+
 	eleventyConfig.addBundle("css", {
 		toFileDirectory: "dist",
 	});
@@ -42,6 +46,13 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(HtmlBasePlugin);
 	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
+	eleventyConfig.addPlugin(EleventyRenderPlugin);
+	eleventyConfig.addPlugin(pluginWebc, {
+		components: [
+			"./_components/**/*.webc",
+			"npm:@11ty/is-land/*.webc"
+		]
+	});
 
 	eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom",
@@ -92,18 +103,8 @@ export default async function (eleventyConfig) {
 };
 
 export const config = {
-	templateFormats: [
-		"md",
-		"njk",
-		"html",
-		"liquid",
-		"11ty.js",
-	],
-
 	markdownTemplateEngine: "njk",
-
 	htmlTemplateEngine: "njk",
-
 	dir: {
 		input: "content",          // default: "."
 		includes: "../_includes",  // default: "_includes" (`input` relative)
