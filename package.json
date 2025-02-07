@@ -9,7 +9,7 @@
 		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-		"tw:watch": "@tailwindcss/cli -o public/css/tailwind.css -w"
+		"tw:watch": "npx @tailwindcss/cli -o public/css/tailwind.css -w"
 	},
 	"repository": {
 		"type": "git",

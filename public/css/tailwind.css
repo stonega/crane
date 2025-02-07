@@ -742,11 +742,11 @@
   .flex {
     display: flex;
   }
+  .grid {
+    display: grid;
+  }
   .hidden {
     display: none;
-  }
-  .inline {
-    display: inline;
   }
   .inline-block {
     display: inline-block;
@@ -767,10 +767,6 @@
   .size-6 {
     width: calc(var(--spacing) * 6);
     height: calc(var(--spacing) * 6);
-  }
-  .size-8 {
-    width: calc(var(--spacing) * 8);
-    height: calc(var(--spacing) * 8);
   }
   .flex-auto {
     flex: auto;
@@ -816,9 +812,6 @@
   }
   .items-center {
     align-items: center;
-  }
-  .justify-between {
-    justify-content: space-between;
   }
   .space-y-2 {
     :where(& > :not(:last-child)) {
@@ -1072,6 +1065,10 @@
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
 }
 @keyframes spin {
   to {
@@ -1197,6 +1194,10 @@
   inherits: false;
 }
 @property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
   syntax: "*";
   inherits: false;
 }
