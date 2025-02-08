@@ -1,7 +1,7 @@
 {
 	"name": "crane",
 	"version": "9.0.0",
-	"description": "I'm Store, this is my personal site.",
+	"description": "I'm Stone, this is my personal site.",
 	"type": "module",
 	"scripts": {
 		"build": "npx @11ty/eleventy",
