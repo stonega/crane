@@ -146,6 +146,12 @@ header {
 	color: var(--text-color-link-active) !important;
 	text-transform: uppercase;
 	line-height: 1;
+	display: inline-block;
+	view-transition-name: page-title;
+}
+
+html.theme-transition .text-stone {
+	view-transition-name: none;
 }
 
 .links-nextprev {
@@ -252,24 +258,16 @@ code {
 }
 
 /* Theme switch effect */
-@view-transition {
-  navigation: none;
-}
-::view-transition-new(root) {
+html.theme-transition::view-transition-new(root) {
   mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="white"/></svg>')
     var(--mask-x) var(--mask-y) / 0 no-repeat;
   animation: scale var(--mask-duration) ease-out;
 	transform-origin: var(--mask-x) var(--mask-y);
 }
 
-::view-transition-old(root),
-.dark::view-transition-old(root) {
+html.theme-transition::view-transition-old(root) {
   animation: none;
   z-index: -1;
-}
-
-.dark::view-transition-new(root) {
-  animation: scale var(--mask-duration) ease-out;
 }
 
 @keyframes scale {
@@ -277,4 +275,32 @@ code {
     mask-size: var(--mask-size);
 		mask-position: calc(var(--mask-x) - var(--mask-size) / 2) calc(var(--mask-y) - var(--mask-size) / 2);
   }
+}
+
+/* Page title transition */
+::view-transition-group(page-title) {
+	animation-duration: 0.5s;
+	animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+::view-transition-old(page-title) {
+	animation: fade-out-up 1.5s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+::view-transition-new(page-title) {
+	animation: fade-in-up 1.5s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@keyframes fade-out-up {
+	to {
+		opacity: 0;
+		filter: blur(20px);
+	}
+}
+
+@keyframes fade-in-up {
+	from {
+		opacity: 0;
+		filter: blur(20px);
+	}
 }
