@@ -14,13 +14,17 @@ I am well-versed in various blockchain platforms such as Ethereum, Solana, Bitco
 
 ## ✍️
 
-[utxos.xyz](https://utxos.xyz)
+[Clay Read](https://clayread.com)
 
-UTXOs dashboard.
+Reading tracker.
 
-[Jenkins Board](https://github.com/stonega/jenkins-board)
+[AInput](https://chromewebstore.google.com/detail/ainput/paleeakmljeofbpnnbnkllpbigccecnh)
 
-Jenkins board, build with flutter.
+Make every input on the webpage more intelligent.
+
+[Notable](https://chromewebstore.google.com/detail/notable/cabmfpoddhplciabegamnnlcfdodghpn)
+
+New tab, new note.
 
 [Tsacdop](https://tsacdop.app)
 
