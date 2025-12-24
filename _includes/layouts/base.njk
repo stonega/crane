@@ -20,6 +20,7 @@
 
 		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
 		{%- js %}{% include "lib/theme.js" %}{% endjs %}
+		{%- js %}{% include "lib/snow.js" %}{% endjs %}
 		<script>
 			const initTheme = (theme) => {
 				if (theme === 'dark') {
@@ -58,6 +59,9 @@
 		<footer class="flex space-x-2 items-center text-sm mt-2">
 			<button id="dark-mode-toggle" class="cursor-pointer" aria-label="Toggle Dark Mode">
 				<span id="theme-icon"></span>
+			</button>
+			<button id="snow-toggle" class="cursor-pointer" aria-label="Toggle Snow Effect">
+				<span id="snow-icon"></span>
 			</button>
 			<p>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
 		</footer>
