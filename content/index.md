@@ -1,5 +1,7 @@
 <a href="/" class="text-stone">STONE</a>
 
+<img src="{{ '/img/avatar.jpeg' | htmlBaseUrl('/') }}" alt="Stone" class="mt-6" style="width: 100px; height: 100px; border-radius: 9999px; object-fit: cover;" />
+
 ## 👋
 
 Hey, I am **Stone**. I am a UI developer.
@@ -54,7 +56,6 @@ Love rockets and cranes
 
 [GitHub](https://github.com/stonega)
 
-[Twitter](https://twitter.com/shimenmen)
+[X](https://x.com/shimenmen)
 
 [Email](mailto:xijieyin@gmail.com)
-

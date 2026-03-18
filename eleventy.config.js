@@ -20,6 +20,9 @@ export default async function (eleventyConfig) {
 		.addPassthroughCopy({
 			"./public/": "/"
 		})
+		.addPassthroughCopy({
+			"./public/img/": "/content/img/"
+		})
 		.addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
 
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpg,jpeg,gif}");

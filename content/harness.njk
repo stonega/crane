@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: Harness
+permalink: /harness/
+description: Prompts and skills synced from stonega/harness.
+---
+<a href="/harness" class="text-stone">HARNESS</a>
+
+<section class="mt-8 space-y-4">
+	<h1 class="text-3xl font-semibold">Harness</h1>
+	<p>
+		A collection of prompts and skills I use to support my coding workflow.
+	</p>
+	<p class="text-sm opacity-70">
+		Last updated: <time datetime="{{ harness.syncedAt }}">{{ harness.syncedAt }}</time>
+	</p>
+</section>
+
+<section class="mt-10">
+	<div class="flex items-baseline justify-between gap-4">
+		<h2 class="text-2xl font-semibold">Prompts</h2>
+		<span class="text-sm opacity-70">{{ harness.prompts | length }}</span>
+	</div>
+	<ul class="mt-4 space-y-3">
+		{% for prompt in harness.prompts %}
+			<li class="rounded-lg border border-stone-200/70 px-4 py-3 dark:border-stone-700">
+				<a href="{{ prompt.url }}" class="font-medium">{{ prompt.name }}</a>
+				<p class="mt-1 text-sm opacity-70">{{ prompt.path }}</p>
+			</li>
+		{% endfor %}
+	</ul>
+</section>
+
+<section class="mt-10">
+	<div class="flex items-baseline justify-between gap-4">
+		<h2 class="text-2xl font-semibold">Skills</h2>
+		<span class="text-sm opacity-70">{{ harness.skills | length }}</span>
+	</div>
+	<ul class="mt-4 space-y-3">
+		{% for skill in harness.skills %}
+			<li class="rounded-lg border border-stone-200/70 px-4 py-3 dark:border-stone-700">
+				<a href="{{ skill.url }}" class="font-medium">{{ skill.name }}</a>
+				<p class="mt-1 text-sm opacity-70">{{ skill.path }}</p>
+			</li>
+		{% endfor %}
+	</ul>
+</section>
