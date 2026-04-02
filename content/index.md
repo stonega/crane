@@ -11,9 +11,6 @@ I have experience in designing and developing web and mobile applications using 
 In my free time, I enjoy exploring new design trends, experimenting with new technologies, contributing to open source projects,
 and developing side projects.
 
-I am also proficient in web3 development. I have been worked on several dapps and wallets.
-I am well-versed in various blockchain platforms such as Ethereum, Solana, Bitcoin, and I am familiar with smart contracts.
-
 ## ✍️
 
 [Clay Read](https://clayread.com)
