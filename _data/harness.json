@@ -3,25 +3,31 @@
     "name": "stonega/harness",
     "url": "https://github.com/stonega/harness",
     "branch": "main",
-    "pushedAt": "2026-03-18T08:50:18Z",
-    "updatedAt": "2026-03-18T08:50:21Z"
+    "pushedAt": "2026-03-27T03:38:26Z",
+    "updatedAt": "2026-03-27T03:38:29Z"
   },
-  "syncedAt": "2026-03-18T09:21:47.018Z",
+  "syncedAt": "2026-04-02T09:41:41.349Z",
   "prompts": [
     {
-      "name": "end_session.md",
-      "path": "prompts/end_session.md",
-      "url": "https://github.com/stonega/harness/blob/main/prompts/end_session.md",
-      "type": "file"
-    },
-    {
-      "name": "velorah-landing-page",
-      "path": "prompts/velorah-landing-page",
-      "url": "https://github.com/stonega/harness/blob/main/prompts/velorah-landing-page",
+      "name": "velorah-landing-page.md",
+      "path": "prompts/velorah-landing-page.md",
+      "url": "https://github.com/stonega/harness/blob/main/prompts/velorah-landing-page.md",
       "type": "file"
     }
   ],
   "skills": [
+    {
+      "name": "daily",
+      "path": "skills/daily",
+      "url": "https://github.com/stonega/harness/tree/main/skills/daily",
+      "type": "dir"
+    },
+    {
+      "name": "deep-review",
+      "path": "skills/deep-review",
+      "url": "https://github.com/stonega/harness/tree/main/skills/deep-review",
+      "type": "dir"
+    },
     {
       "name": "design-an-interface",
       "path": "skills/design-an-interface",
@@ -29,9 +35,15 @@
       "type": "dir"
     },
     {
-      "name": "write-a-skill",
-      "path": "skills/write-a-skill",
-      "url": "https://github.com/stonega/harness/tree/main/skills/write-a-skill",
+      "name": "new-project",
+      "path": "skills/new-project",
+      "url": "https://github.com/stonega/harness/tree/main/skills/new-project",
+      "type": "dir"
+    },
+    {
+      "name": "save-harness",
+      "path": "skills/save-harness",
+      "url": "https://github.com/stonega/harness/tree/main/skills/save-harness",
       "type": "dir"
     }
   ]

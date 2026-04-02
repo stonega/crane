@@ -20,10 +20,10 @@
 
 		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
 		{%- js %}{% include "lib/theme.js" %}{% endjs %}
-		{%- js %}{% include "lib/snow.js" %}{% endjs %}
+		{%- js %}{% include "lib/gallery-shader.js" %}{% endjs %}
 		<script>
 		const initTheme = (mode) => {
-			if (mode === 'dark' || mode === 'snow') {
+			if (mode === 'dark') {
 				document.documentElement.classList.add('dark');
 				document.documentElement.classList.remove('light');
 			} else {
@@ -31,45 +31,22 @@
 				document.documentElement.classList.remove('dark');
 			}
 		}
-		// Get system preferences
 		const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-		// Check if Christmas period
-		const now = new Date();
-		const month = now.getMonth();
-		const day = now.getDate();
-		const isChristmas = (month === 11) || (month === 0 && day <= 6);
-		// Get saved mode from localStorage or use Christmas/system preference
 		const savedMode = localStorage.getItem('mode');
-		if (savedMode) {
-			initTheme(savedMode);
-		} else if (isChristmas) {
-			initTheme('snow');
-		} else {
-			initTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
-		}
+		const normalizedMode = savedMode === 'snow' ? 'dark' : savedMode;
+		initTheme(normalizedMode || (darkModeMediaQuery.matches ? 'dark' : 'light'));
 	</script>
 	</head>
-	<body>
+	<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 		<main id="skip">
 			<heading-anchors>
 				{{ content | safe }}
 			</heading-anchors>
 		</main>
-		<ul class="mt-6 flex space-x-4 text-lg">
-			<li><a href="/" class="nav-link">HOME</a></li>
-			<li><a href="/harness" class="nav-link">HARNESS</a></li>
-			<li><a href="https://clayread.com/reader/stonegate" class="nav-link">BOOKS</a></li>
-			<li><a href="/tips" class="nav-link">TIPS</a></li>
-			<li><a href="/write" class="nav-link">WRITE</a></li>
-			<li><a href="/feed/feed.xml" class="nav-link">FEED</a></li>
-		</ul>
-		<footer class="flex space-x-2 items-center text-sm mt-2">
-			<button id="dark-mode-toggle" class="cursor-pointer" aria-label="Toggle Theme Mode">
-				<span id="theme-icon"></span>
-			</button>
-			<p>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em></p>
-		</footer>
+		{% if bodyClass != "home-body" and bodyClass != "full-width-body" %}
+			{% include "partials/site-chrome.njk" %}
+		{% endif %}
 		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
 	</body>
 </html>

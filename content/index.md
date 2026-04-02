@@ -1,3 +1,7 @@
+---
+bodyClass: home-body
+---
+
 <a href="/" class="text-stone">STONE</a>
 
 <img src="{{ '/img/avatar.jpeg' | htmlBaseUrl('/') }}" alt="Stone" class="mt-6" style="width: 100px; height: 100px; border-radius: 9999px; object-fit: cover;" />

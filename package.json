@@ -4,8 +4,9 @@
 	"description": "I'm Stone, this is my personal site.",
 	"type": "module",
 	"scripts": {
-		"sync:harness": "node scripts/sync-harness.mjs",
-		"build": "node scripts/sync-harness.mjs && npx @11ty/eleventy",
+		"sync:harness": "node --env-file-if-exists=.env.local scripts/sync-harness.mjs",
+		"sync:gallery": "node --env-file-if-exists=.env.local scripts/sync-gallery.mjs",
+		"build": "node --env-file-if-exists=.env.local scripts/sync-gallery.mjs && node --env-file-if-exists=.env.local scripts/sync-harness.mjs && npx @11ty/eleventy",
 		"start": "npx @11ty/eleventy --serve --quiet",
 		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",

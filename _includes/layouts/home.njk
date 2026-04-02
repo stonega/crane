@@ -2,4 +2,29 @@
 layout: layouts/base.njk
 ---
 
-{{ content | safe }}
+<section class="home-page">
+	<div class="home-page__content">
+		{{ content | safe }}
+		{% include "partials/site-chrome.njk" %}
+	</div>
+	{% if homeGallery and homeGallery.photos and homeGallery.photos.length %}
+		<aside class="home-page__gallery" aria-label="Photo gallery">
+			<div class="home-page__gallery-sticky">
+				<div class="photo-gallery" role="list">
+					{% for photo in homeGallery.photos %}
+						<figure class="photo-gallery__item" role="listitem">
+							<img
+								class="photo-gallery__image"
+								src="{{ photo.src }}"
+								alt="{{ photo.alt }}"
+								loading="lazy"
+								decoding="async"
+							>
+							<canvas class="photo-gallery__shader" aria-hidden="true"></canvas>
+						</figure>
+					{% endfor %}
+				</div>
+			</div>
+		</aside>
+	{% endif %}
+</section>
