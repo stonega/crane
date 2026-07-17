@@ -19,7 +19,9 @@ and developing side projects.
 
 [Clay Read](https://clayread.com)
 
-Reading tracker.
+The Dedicated App for Physical Book Lovers
+
+<img src="{{ '/img/clayread.png' | htmlBaseUrl('/') }}" alt="Clay Read app snapshot" width="2558" height="1439" loading="lazy" decoding="async" style="border-radius: 0.5rem;" />
 
 [AInput](https://chromewebstore.google.com/detail/ainput/paleeakmljeofbpnnbnkllpbigccecnh)
 
