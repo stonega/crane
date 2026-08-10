@@ -23,7 +23,6 @@ The Dedicated App for Physical Book Lovers
 
 <img src="{{ '/img/clayread_screenshot.webp' | htmlBaseUrl('/') }}" alt="Clay Read app snapshot" width="2558" height="1439" loading="lazy" decoding="async" style="border-radius: 0.5rem;" />
 
-
 [Tsacdop](https://tsacdop.app)
 
 Enjoy podcast with Tsacdop.
