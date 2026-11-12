@@ -1,0 +1,5 @@
+Edited with the built-in imagegen tool.
+
+Edit type: precise-object-edit.
+Edit the attached existing blog cover with ONE targeted change: make the Codex cloud emblem held below the Kitty cat smaller.
+Reduce the Codex emblem's width and height to approximately 72% of its current size. Preserve its exact six-lobed white outline and inner >_ symbol, scaled together proportionally. Keep its top edge just beneath the cat's nose and paws; the reduced emblem should fit comfortably between/under the paws instead of dominating the composition. The paws should still read as holding it. Do not shrink the cat, do not scale the whole illustration, and do not reposition or redraw the cat's head, ears, eyes, whiskers, nose or paws. Keep the existing overall canvas, 16:9 framing, charcoal background, cat size and location, original colors, flat style and empty margins unchanged. Fill the area exposed by the smaller emblem with the matching background. No additional elements, text, effects or other changes.
