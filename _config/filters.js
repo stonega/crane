@@ -34,6 +34,18 @@ export default function (eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-		return (tags || []).filter(tag => ["all", "posts"].indexOf(tag) === -1);
+		return (tags || []).filter(tag => ["all", "posts", "primaryPosts"].indexOf(tag) === -1);
+	});
+
+	eleventyConfig.addFilter("postTranslations", (posts, translationKey) => {
+		return (posts || []).filter(post => post.data.translationKey === translationKey);
+	});
+
+	eleventyConfig.addFilter("primaryPosts", (posts) => {
+		return (posts || []).filter(post => !post.data.isTranslation);
+	});
+
+	eleventyConfig.addFilter("postsForLanguage", (posts, lang) => {
+		return (posts || []).filter(post => post.data.lang === lang);
 	});
 };

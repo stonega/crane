@@ -7,6 +7,7 @@ layout: layouts/base.njk
 <a href="/" class="text-stone">{{ tags[1] | safe }}</a>
 <h1>{{ title }}</h1>
 
+<div class="post-details">
 <ul class="post-metadata">
 	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
 	{%- for tag in tags | filterTagList %}
@@ -14,16 +15,26 @@ layout: layouts/base.njk
 	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
 	{%- endfor %}
 </ul>
+{%- set translations = collections.posts | postTranslations(translationKey) %}
+{%- if translations.length > 1 %}
+<nav class="post-languages" aria-label="{{ 'Post language' if lang == 'en' else '文章语言' }}">
+	{%- for translation in translations %}
+	<a class="post-language" href="{{ translation.url }}" lang="{{ translation.data.lang }}" hreflang="{{ translation.data.lang }}"{% if translation.url == page.url %} aria-current="page"{% endif %}>{{ 'English' if translation.data.lang == 'en' else '中文' }}</a>
+	{%- endfor %}
+</nav>
+{%- endif %}
+</div>
 
 {{ content | safe }}
 
 {%- if collections.posts %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-{%- set nextPost = collections.posts | getNextCollectionItem %}
+{%- set languagePosts = collections.posts | postsForLanguage(lang) %}
+{%- set previousPost = languagePosts | getPreviousCollectionItem %}
+{%- set nextPost = languagePosts | getNextCollectionItem %}
 {%- if nextPost or previousPost %}
 <ul class="links-nextprev">
-	{%- if previousPost %}<li class="links-nextprev-prev"><a href="{{ previousPost.url }}">← Previous</a><br></li>{% endif %}
-	{%- if nextPost %}<li class="links-nextprev-next"><a href="{{ nextPost.url }}">Next →</a><br></li>{% endif %}
+	{%- if previousPost %}<li class="links-nextprev-prev"><a href="{{ previousPost.url }}">← {{ 'Previous' if lang == 'en' else '上一篇' }}</a><br></li>{% endif %}
+	{%- if nextPost %}<li class="links-nextprev-next"><a href="{{ nextPost.url }}">{{ 'Next' if lang == 'en' else '下一篇' }} →</a><br></li>{% endif %}
 </ul>
 {%- endif %}
 {%- endif %}

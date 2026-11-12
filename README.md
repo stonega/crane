@@ -4,6 +4,30 @@
 
 Building rocket with the crane.
 
+## Blog translations
+
+Each article in `content/blog` has a language counterpart beside it. For example,
+`my_2024_review.md` and `my_2024_review.en.md` are paired automatically by filename.
+The original post keeps its existing URL and remains the entry shown in blog
+lists, tag pages, and the Atom feed.
+
+For an English translation, copy the original post's date and tags, translate its
+title, description, and body, and set these front matter fields:
+
+```yaml
+lang: en
+isTranslation: true
+permalink: posts/my-post/en/index.html
+```
+
+Original posts default to `lang: zh-CN`. If the original is English, set its
+`lang: en` explicitly and add a `.zh.md` counterpart with `lang: zh-CN` and
+`isTranslation: true`. Use a unique permalink for each version. Keeping the files
+in the same directory lets both versions reuse relative image paths.
+
+The post layout shows a 中文 / English switch, and previous/next links stay in
+the current language. Each page also declares its language and alternate URLs.
+
 ## Solutions used
 
 - [11ty](https://www.11ty.dev/)

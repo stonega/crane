@@ -1,5 +1,6 @@
 ---
 title: How to fix cors issue in clerk nextjs project
+lang: en
 date: "2023-10-06"
 tags: [clerk, nextjs]
 description: .

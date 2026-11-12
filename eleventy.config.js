@@ -43,6 +43,10 @@ export default async function (eleventyConfig) {
 		return collectionsApi.getAll().filter((item) => /^\/tips\/.+/.test(item.url));
 	});
 
+	eleventyConfig.addCollection("primaryPosts", (collectionsApi) => {
+		return collectionsApi.getFilteredByTag("posts").filter(item => !item.data.isTranslation);
+	});
+
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
 		preAttributes: { tabindex: 0 }
 	});
@@ -63,7 +67,7 @@ export default async function (eleventyConfig) {
 		stylesheet: "pretty-atom-feed.xsl",
 		templateData: {},
 		collection: {
-			name: "posts",
+			name: "primaryPosts",
 			limit: 10,
 		},
 		metadata: {

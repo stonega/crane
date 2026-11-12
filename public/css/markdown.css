@@ -11,3 +11,41 @@ img {
 	border-radius: .5rem;
 	margin: 8px 0;
 }
+
+.post-details {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.post-languages {
+	display: inline-flex;
+	gap: .25rem;
+	padding: .25rem;
+	border: 1px solid currentColor;
+	border-radius: .5rem;
+}
+
+.post-language {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem;
+	padding: .5rem .75rem;
+	border-radius: .25rem;
+	font-size: .875rem;
+	text-decoration: none;
+}
+
+.post-language[aria-current="page"] {
+	background-color: var(--text-color);
+	color: var(--background-color);
+}
+
+.post-language:focus-visible {
+	outline: 2px solid var(--text-color-link-active);
+	outline-offset: 2px;
+}
